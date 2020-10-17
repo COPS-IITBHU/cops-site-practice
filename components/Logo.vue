@@ -27,9 +27,13 @@
 }
 
 .Triangle--one {
-  border-left: 98px solid transparent;
+  border-left: 105px solid transparent;
   border-right: 105px solid transparent;
-  border-bottom: 109px solid #00ffff;
+  border-bottom: 180px solid #41b883;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
 }
 
 .Triangle--two {
