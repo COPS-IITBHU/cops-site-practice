@@ -1,0 +1,46 @@
+{
+    "items": [
+        {
+          "id": 1,
+          "tabTitle": "Dev",
+          "icon": "mdi-github",
+          "title": "Development",
+          "content":"The aim is to involve people in open source contributions and to get a taste of actual development in a collaborative effort. The resources for Backend, Frontend, Android Development as well as Web VR will be provided to the students on a weekly basis. By the end of the program, students should be comfortable with whatever development environment they've set up, basic technologies in web development and how to contribute to open source projects and to solve their issues.",
+          "imageUrl": "",
+          "mentor1Name": "John William",
+          "mentor1Email": "william@gmail.com",
+          "mentor1Telegram": "https://t.me/william",
+          "mentor2Name": "Harry Nisham",
+          "mentor2Email": "harry@gmail.com",
+          "mentor2Telegram": "https://t.me/harry"
+        },
+        {
+          "id": 2,
+          "tabTitle": "CP",
+          "icon": "mdi-graph-outline",
+          "title": "Competitive Programming",
+          "content":"The aim is to give exposure to students regarding the various concepts, tools and tricks in competitive programming. To encourage a good culture, there will be a 7 day long practice contest, with carefully picked interesting questions of various topics from beginner to expert level, which one can solve along with studying the materials. This will be carried on with a discussion on Telegram and Google Group, where one can clear their doubts. Tutorials and practice problems, along with their editorials will be released for every contest.",
+          "imageUrl": "",
+          "mentor1Name": "John William",
+          "mentor1Email": "william@gmail.com",
+          "mentor1Telegram": "https://t.me/william",
+          "mentor2Name": "Harry Nisham",
+          "mentor2Email": "harry@gmail.com",
+          "mentor2Telegram": "https://t.me/harry"
+        },
+        {
+          "id": 3,
+          "tabTitle": "ML",
+          "icon": "mdi-robot",
+          "title": "Machine Learning",
+          "content": "The aim of the programme is to equip the participants with the necessary tools and techniques of Machine Learning and to give an idea regarding the various avenues and developments taking place in the field. The students will be taught about Data Science, encouraged to participate in competitive Machine Learning, and exposure will also be give to Computer Vision and Natural Language Processing, two of the hot topics in the research field.",
+          "imageUrl": "",
+          "mentor1Name": "John William",
+          "mentor1Email": "william@gmail.com",
+          "mentor1Telegram": "https://t.me/william",
+          "mentor2Name": "Harry Nisham",
+          "mentor2Email": "harry@gmail.com",
+          "mentor2Telegram": "https://t.me/harry"
+        }
+      ]
+}
