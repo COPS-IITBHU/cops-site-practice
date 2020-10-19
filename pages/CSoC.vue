@@ -1,5 +1,6 @@
 <template>
   <div>
+    <JoinTheForce />
     <CsocTracks :items="items" />
   </div>
 </template>
