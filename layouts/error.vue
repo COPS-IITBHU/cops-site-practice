@@ -1,5 +1,6 @@
 <template>
   <v-app dark>
+    <Navbar></Navbar>
     <h1 v-if="error.statusCode === 404">
       {{ pageNotFound }}
     </h1>
@@ -11,8 +12,12 @@
 </template>
 
 <script>
+import Navbar from '~/components/Navbar'
 export default {
   layout: 'empty',
+  components: {
+    Navbar,
+  },
   props: {
     error: {
       type: Object,
