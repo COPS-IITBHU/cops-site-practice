@@ -132,17 +132,17 @@ export default {
             {
               icon: 'mdi-chart-line-variant',
               title: 'CP',
-              route: '/csoc/cp',
+              route: '/group/cp',
             },
             {
               icon: 'mdi-github',
               title: 'Dev',
-              route: '/csoc/dev',
+              route: '/group/dev',
             },
             {
               icon: 'mdi-circle-slice-3',
               title: 'ML',
-              route: '/csoc/ml',
+              route: '/group/ml',
             },
           ],
         },
