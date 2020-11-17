@@ -31,6 +31,22 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
+    [
+      'nuxt-fontawesome',
+      {
+        component: 'fa',
+        imports: [
+          {
+            set: '@fortawesome/free-brands-svg-icons',
+            icons: ['faGithub', 'faFacebook', 'faSlack', 'faGoogle'],
+          },
+          {
+            set: '@fortawesome/free-solid-svg-icons',
+            icons: ['faEnvelope', 'faRss'],
+          },
+        ],
+      },
+    ],
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
