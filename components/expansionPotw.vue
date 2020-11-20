@@ -8,8 +8,9 @@
       align-center
     >
       <v-col
-        cols="3"
-        sm="2"
+        cols="4"
+        sm="3"
+        md="2"
         xl="1"
         class="text-start text-subtitle-2 flex-grow-0"
         align-self="center"
@@ -18,16 +19,18 @@
           {{ articleType }}
         </v-card>
       </v-col>
-      <v-col cols="9" sm="5" align-self="center">
+      <v-col cols="8" sm="4" md="5" lg="6" align-self="center">
         <v-card class="px-1 py-1 text-start text-body-2" flat>
           {{ tut.title }}
         </v-card>
       </v-col>
       <v-spacer />
       <v-col
-        cols="5"
+        cols="8"
         sm="5"
-        class="text-end mt-2 mt-sm-0 offset-6 offset-sm-0"
+        md="5"
+        lg="4"
+        class="text-end mt-2 mt-sm-0 offset-4 offset-sm-0"
         align-self="center"
       >
         <v-row>
