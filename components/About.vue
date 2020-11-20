@@ -4,13 +4,13 @@
       <v-row align="center" justify="space-around">About us</v-row>
     </v-card-title>
     <v-card-text>
-      <p>
+      <p class="text-body-1">
         In this age of increasing automation, programming is not limited to only
         computer science and related fields. Every competent engineer needs to
         know how to program. This makes Club of Programmers one of the most
         important clubs in the institute.
       </p>
-      <p>
+      <p class="text-body-1">
         Club of Programmers (or better known as COPS) understands this
         responsibility and plays a crucial part in maintaining the coding
         culture in the institute. Introductory workshops are held for freshers
@@ -21,7 +21,7 @@
         festival. ICM(International Coding Marathon) event organised by COPS in
         Technex attracts the maximum participation in the fest.
       </p>
-      <p>
+      <p class="text-body-1">
         Although the club has been functioning quite well as compared to other
         clubs, still, a lot of things needs to be done. Some great initiatives
         were taken by the current secretaries, including the formation of
