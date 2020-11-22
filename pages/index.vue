@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-row align="center" justify="center">
-      <v-col sm="12" md="6" align="center">
+      <v-col cols="12" sm="12" md="6" align="center">
         <avatar />
         <p></p>
         <br />
@@ -27,7 +27,7 @@
           </v-btn>
         </v-row>
       </v-col>
-      <v-col sm="12" md="6">
+      <v-col cols="12" sm="12" md="6">
         <about />
       </v-col>
     </v-row>

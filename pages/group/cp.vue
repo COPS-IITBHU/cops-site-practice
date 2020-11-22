@@ -3,21 +3,28 @@
     <div class="text-h5 text--secondary text-center mb-6">
       POTW (Problem Of The Week)
     </div>
-    <v-expansion-panels class="mb-6" accordion>
-      <v-expansion-panel v-for="item in items" :key="item.name">
-        <v-expansion-panel-header
-          expand-icon="mdi-menu-down"
-          class="text-body-1"
-        >
-          {{ item.name }}
-          <template v-slot:actions>
-            <v-icon color="primary">mdi-menu-down</v-icon>
-          </template>
-        </v-expansion-panel-header>
-        <expansionPotw :tutorial="item.tutorial" article-type="Tutorial" />
-        <expansionPotw :tutorial="item.problems" article-type="Problems" />
-      </v-expansion-panel>
-    </v-expansion-panels>
+    <v-lazy
+      :options="{
+        threhold: 0.5,
+      }"
+      transition="scale-transition"
+    >
+      <v-expansion-panels class="mb-6" accordion>
+        <v-expansion-panel v-for="item in items" :key="item.name">
+          <v-expansion-panel-header
+            expand-icon="mdi-menu-down"
+            class="text-body-1"
+          >
+            {{ item.name }}
+            <template v-slot:actions>
+              <v-icon color="primary">mdi-menu-down</v-icon>
+            </template>
+          </v-expansion-panel-header>
+          <expansionPotw :tutorial="item.tutorial" article-type="Tutorial" />
+          <expansionPotw :tutorial="item.problems" article-type="Problems" />
+        </v-expansion-panel>
+      </v-expansion-panels>
+    </v-lazy>
   </v-container>
 </template>
 
