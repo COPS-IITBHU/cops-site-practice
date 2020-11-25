@@ -29,24 +29,8 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
-    // https://go.nuxtjs.dev/vuetify
+    // https://go.nuxtjs.dev/vuetify,
     '@nuxtjs/vuetify',
-    [
-      'nuxt-fontawesome',
-      {
-        component: 'fa',
-        imports: [
-          {
-            set: '@fortawesome/free-brands-svg-icons',
-            icons: ['faGithub', 'faFacebook', 'faSlack', 'faGoogle'],
-          },
-          {
-            set: '@fortawesome/free-solid-svg-icons',
-            icons: ['faEnvelope', 'faRss'],
-          },
-        ],
-      },
-    ],
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -68,6 +52,11 @@ export default {
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
+    treeShake: true,
+    defaultAssets: false,
+    icons: {
+      iconfont: 'mdiSvg',
+    },
     theme: {
       dark: true,
       themes: {
