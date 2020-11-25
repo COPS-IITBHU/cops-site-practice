@@ -27,7 +27,7 @@
               <v-icon>{{ icons.mdiGoogle }}</v-icon>
             </h1>
           </v-btn>
-          <v-btn icon href="mailto:contact@copsiitbhu.co.in">
+          <v-btn icon href="mailto:copsiitbu@gmail.com">
             <h1>
               <v-icon>{{ icons.mdiEmail }}</v-icon>
             </h1>
