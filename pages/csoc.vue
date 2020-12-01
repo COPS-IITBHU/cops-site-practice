@@ -23,6 +23,16 @@ export default {
       mlImage: require('../assets/images/ml.png'),
     }
   },
+  head: {
+    title: 'CSOC',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'COPS Summer of Code',
+      },
+    ],
+  },
 }
 </script>
 
