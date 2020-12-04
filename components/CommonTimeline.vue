@@ -5,6 +5,8 @@
         v-for="(item, i) in items"
         :key="i"
         :color="item.color"
+        :icon="item.icon"
+        fill-dot
         small
       >
         <template v-slot:opposite>
