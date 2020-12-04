@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="timeline">
     <CommonTimeline :items="items" />
   </div>
 </template>
@@ -22,3 +22,8 @@ export default {
   },
 }
 </script>
+<style scoped>
+.timeline{
+  margin: 10% 0px;
+}
+</style>
