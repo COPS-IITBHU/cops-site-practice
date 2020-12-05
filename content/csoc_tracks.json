@@ -4,7 +4,7 @@
           "id": 1,
           "tabTitle": "Dev",
           "icon": "mdiGithub",
-          "isActive":false,
+          "isActive":true,
           "title": "Development",
           "content":"The aim is to involve people in open source contributions and to get a taste of actual development in a collaborative effort. The resources for Backend, Frontend, Android Development as well as Web VR will be provided to the students on a weekly basis. By the end of the program, students should be comfortable with whatever development environment they've set up, basic technologies in web development and how to contribute to open source projects and to solve their issues.",
           "imageUrl": "",
