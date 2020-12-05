@@ -5,7 +5,7 @@
         <avatar />
         <p></p>
         <br />
-        <h2>Club of Programmers IIT(BHU), Varanasi</h2>
+        <h2>{{ cops }}</h2>
         <v-row align="center" justify="center">
           <v-btn icon href="https://github.com/COPS-IITBHU">
             <h1>
@@ -62,6 +62,12 @@ export default {
   components: {
     About,
     Avatar,
+  },
+  props: {
+    cops: {
+      type: String,
+      default: 'Club of Programmers IIT(BHU), Varanasi',
+    },
   },
   data() {
     return {
