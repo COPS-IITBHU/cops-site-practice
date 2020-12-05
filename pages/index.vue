@@ -7,34 +7,9 @@
         <br />
         <h2>Club of Programmers IIT(BHU), Varanasi</h2>
         <v-row align="center" justify="center">
-          <v-btn icon href="https://github.com/COPS-IITBHU">
+          <v-btn v-for="item in items" :key="item.id" icon :href="item.url">
             <h1>
-              <v-icon>{{ icons.mdiGithub }}</v-icon>
-            </h1>
-          </v-btn>
-          <v-btn icon href="https://www.facebook.com/cops.iitbhu">
-            <h1>
-              <v-icon>{{ icons.mdiFacebook }}</v-icon>
-            </h1>
-          </v-btn>
-          <v-btn icon href="https://cops-iitbhu.slack.com/">
-            <h1>
-              <v-icon>{{ icons.mdiSlack }}</v-icon>
-            </h1>
-          </v-btn>
-          <v-btn icon href="https://groups.google.com/g/copsiitbhu">
-            <h1>
-              <v-icon>{{ icons.mdiGoogle }}</v-icon>
-            </h1>
-          </v-btn>
-          <v-btn icon href="mailto:copsiitbu@gmail.com">
-            <h1>
-              <v-icon>{{ icons.mdiEmail }}</v-icon>
-            </h1>
-          </v-btn>
-          <v-btn icon href="https://copsiitbhu.co.in/feed.xml">
-            <h1>
-              <v-icon>{{ icons.mdiRss }}</v-icon>
+              <v-icon>{{ item.icon }}</v-icon>
             </h1>
           </v-btn>
         </v-row>
@@ -47,16 +22,9 @@
 </template>
 
 <script>
-import {
-  mdiGithub,
-  mdiGoogle,
-  mdiFacebook,
-  mdiSlack,
-  mdiRss,
-  mdiEmail,
-} from '@mdi/js'
-import About from '~/components/About'
-import Trailer from '~/components/Trailer'
+import { mdiGithub, mdiGoogle, mdiFacebook, mdiSlack, mdiRss, mdiEmail } from "@mdi/js";
+import About from "~/components/About";
+import Trailer from "~/components/Trailer";
 
 export default {
   components: {
@@ -70,20 +38,26 @@ export default {
         mdiGithub,
         mdiGoogle,
         mdiRss,
-        mdiSlack,
         mdiEmail,
       },
-    }
+      items: [
+        { icon: mdiGithub, url: "https://github.com/COPS-IITBHU" },
+        { icon: mdiFacebook, url: "https://www.facebook.com/cops.iitbhu" },
+        { icon: mdiGoogle, url: "https://groups.google.com/g/copsiitbhu" },
+        { icon: mdiEmail, url: "mailto:copsiitbu@gmail.com" },
+        { icon: mdiRss, url: "https://copsiitbhu.co.in/feed.xml" },
+      ],
+    };
   },
   head: {
-    title: 'Home',
+    title: "Home",
     meta: [
       {
-        hid: 'description',
-        name: 'description',
-        content: 'Club of Programmers IIT BHU Landing Page',
+        hid: "description",
+        name: "description",
+        content: "Club of Programmers IIT BHU Landing Page",
       },
     ],
   },
-}
+};
 </script>
