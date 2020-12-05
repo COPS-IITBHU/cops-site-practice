@@ -1,11 +1,11 @@
 <template>
   <div class="video">
     <youtube
-      @ready="ready"
       player-width="!fixed"
       :player-vars="{ autoplay: 1 }"
       :video-id="videoId"
       ref="youtube"
+      @ready="ready"
     />
   </div>
 </template>
@@ -14,29 +14,26 @@
 export default {
   data: () => {
     return {
-      videoId: "b9pBQMns4lw",
-    };
-  },
-  methods: {
-    ready(event) {
-      this.player = event.target;
-    },
-    playing(event) {
-      // The player is playing a video.
-    },
-    stop() {
-      this.player.stopVideo();
-    },
-    pause() {
-      this.player.pauseVideo();
-    },
+      videoId: 'b9pBQMns4lw',
+    }
   },
   computed: {
     player() {
-      return this.$refs.youtube.player;
+      return this.$refs.youtube.player
     },
   },
-};
+  methods: {
+    ready(event) {
+      this.player = event.target
+    },
+    stop() {
+      this.player.stopVideo()
+    },
+    pause() {
+      this.player.pauseVideo()
+    },
+  },
+}
 </script>
 
 <style scoped>

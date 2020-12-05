@@ -1,7 +1,10 @@
 <template>
   <v-footer class="footer">
+    <div class="copyright">
+      Copyright &copy; {{ new Date().getFullYear() }} COPS
+    </div>
     <div class="logo">
-      <img src="~/assets/images/new-cops-logo.jpg" width="75px" height="75px" />
+      <img src="~/assets/images/new-cops-logo.jpg" width="60px" height="60px" />
     </div>
     <div class="link">
       <a
@@ -9,15 +12,12 @@
         href="https://github.com/COPS-IITBHU/Code-Of-Conduct/blob/master/README.md"
         >Code of Conduct</a
       >
-    </div>
-    <span style="text-color: white"
-      >Copyright &copy; {{ new Date().getFullYear() }} COPS</span
-    >
+    </div> 
   </v-footer>
 </template>
 
 <script>
-export default {};
+export default {}
 </script>
 
 <style scoped>
@@ -31,12 +31,15 @@ export default {};
   margin: 10px;
   text-decoration-line: none;
   color: #fff;
-  padding: 30px 15px 30px 5px;
-  border-right: 0.1em solid #fff;
 }
-
+.copyright {
+  text-decoration-color: #fff;
+  padding-right: 15px;
+}
 .logo {
   padding-right: 15px;
+  padding-left: 15px;
   border-right: 0.1em solid #fff;
+  border-left: 0.1em solid #fff;
 }
 </style>
