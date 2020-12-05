@@ -1,113 +1,111 @@
 <template>
-  <v-container>
-    <v-card rounded elevation="20">
-      <v-tabs v-model="tab" background-color="purple" icons-and-text fixed-tabs>
-        <v-tabs-slider color="white"></v-tabs-slider>
-        <v-tab
-          v-for="item in items"
-          :key="item.id"
-          active-class="activeTab"
-          class="white--text tab"
+  <v-container mt-5>
+    <div
+      :class="{ tabs__light: mode === 'light', tabs__dark: mode === 'dark' }"
+    >
+      <ul class="tabs__header">
+        <li
+          v-for="(tab, index) in items"
+          :key="index"
+          :class="{ tab__selected: index == selectedIndex }"
+          @click="selectTab(index)"
         >
-          {{ item.tabTitle }}
-          <v-icon>{{ icons[item.icon] }}</v-icon>
-        </v-tab>
-      </v-tabs>
-
-      <v-tabs-items v-model="tab">
-        <v-tab-item v-for="item in items" :key="item.id">
-          <v-card elevation="20">
-            <v-card-title class="justify-center"
-              ><v-card color="black"
-                ><v-card-text
-                  class="border text-xs-h1 text-md-h4 justify-center white--text"
-                  >{{ item.title }}</v-card-text
-                ></v-card
-              ></v-card-title
-            >
-            <hr />
-            <v-card-text class="shadow">
-              <v-row>
-                <v-col cols="12" sm="12" md="5" align="center">
-                  <v-img
-                    :src="item.imageUrl"
-                    contain
-                    height="300"
-                    class="img"
-                    alt="related-img"
-                  ></v-img>
-                </v-col>
-                <v-col
-                  cols="12"
-                  sm="12"
-                  md="7"
-                  align="center"
-                  class="white--text text-justify text-md-subtitle-1"
-                >
-                  <div>{{ item.content }}</div>
-                  <v-card-actions class="justify-space-around mt-10">
-                    <v-btn class="purple">
+          <v-icon class="d-none d-sm-flex icon">{{ icons[tab.icon] }}</v-icon>
+          <span> {{ tab.tabTitle }} </span>
+        </li>
+      </ul>
+      <div v-for="item in items" :key="item.id">
+        <v-card v-show="item.isActive" flat class="tab">
+          <v-card-text>
+            <v-row>
+              <v-col cols="12" sm="12" md="5" align="center">
+                <v-img
+                  :src="item.imageUrl"
+                  width="400"
+                  height="400"
+                  contain
+                  class="img"
+                  alt="related-img"
+                ></v-img>
+              </v-col>
+              <v-col
+                cols="12"
+                sm="12"
+                md="7"
+                align="center"
+                class="white--text text-justify text-md-subtitle-1"
+              >
+                <v-card flat>
+                  <v-card-title class="justify-center text-h4 mb-10">
+                    {{ item.title }}
+                  </v-card-title>
+                  <v-card-text
+                    class="white--text text-justify text-md-subtitle-1"
+                    >{{ item.content }}</v-card-text
+                  >
+                  <v-card-actions class="justify-space-around mt-10 mb-10">
+                    <v-btn class="white black--text">
                       <v-icon left>{{ icons.mdiLinkVariant }}</v-icon>
                       Resources</v-btn
                     >
-                    <v-btn class="purple">
+                    <v-btn class="white black--text">
                       <v-icon left>{{ icons.mdiPoll }}</v-icon>
                       LeaderBoard</v-btn
                     >
                   </v-card-actions>
-                </v-col>
-              </v-row>
-              <v-card-title class="justify-center mt-5"
-                ><v-chip class="ma-2 border" color="black">
-                  <v-icon left> {{ icons.mdiAccountCircleOutline }} </v-icon>
-                  Mentors
-                </v-chip></v-card-title
-              >
-              <v-row class="justify-center">
-                <v-col cols="12" sm="4" align="center">
-                  <v-card elevation="20" shaped width="250" class="border">
-                    <v-card-title class="justify-center">{{
-                      item.mentor1Name
-                    }}</v-card-title>
-                    <v-card-actions class="justify-center justify-space-around">
-                      <div class="social-icons">
-                        <a :href="'mailto:' + item.mentor1Email">
-                          <v-icon class="i">{{ icons.mdiEmailOutline }}</v-icon>
-                        </a>
-                      </div>
-                      <div class="social-icons">
-                        <a :href="item.mentor1Telegram" target="_blank">
-                          <v-icon class="i">{{ icons.mdiTelegram }}</v-icon>
-                        </a>
-                      </div>
-                    </v-card-actions>
-                  </v-card>
-                </v-col>
-                <v-col cols="12" sm="4" align="center">
-                  <v-card elevation="20" width="250" shaped class="border">
-                    <v-card-title class="justify-center"
-                      >{{ item.mentor2Name }}
-                    </v-card-title>
-                    <v-card-actions class="justify-center justify-space-around">
-                      <div class="social-icons">
-                        <a :href="'mailto:' + item.mentor2Email">
-                          <v-icon class="i">{{ icons.mdiEmailOutline }}</v-icon>
-                        </a>
-                      </div>
-                      <div class="social-icons">
-                        <a :href="item.mentor2Telegram" target="_balnk">
-                          <v-icon class="i">{{ icons.mdiTelegram }}</v-icon>
-                        </a>
-                      </div>
-                    </v-card-actions>
-                  </v-card>
-                </v-col>
-              </v-row>
-            </v-card-text>
-          </v-card>
-        </v-tab-item>
-      </v-tabs-items>
-    </v-card>
+                </v-card>
+              </v-col>
+            </v-row>
+            <v-card-title class="justify-center mt-5"
+              ><v-chip class="ma-2 text-subtitle-1" outlined color="white">
+                <v-icon left> {{ icons.mdiAccountCircleOutline }} </v-icon>
+                Mentors
+              </v-chip></v-card-title
+            >
+            <v-row class="justify-center">
+              <v-col cols="12" sm="4" align="center">
+                <v-card elevation="20" shaped width="250" class="border">
+                  <v-card-title class="justify-center">{{
+                    item.mentor1Name
+                  }}</v-card-title>
+                  <v-card-actions class="justify-center justify-space-around">
+                    <div class="social-icons">
+                      <a :href="'mailto:' + item.mentor1Email">
+                        <v-icon class="i">{{ icons.mdiEmailOutline }}</v-icon>
+                      </a>
+                    </div>
+                    <div class="social-icons">
+                      <a :href="item.mentor1Telegram" target="_blank">
+                        <v-icon class="i">{{ icons.mdiTelegram }}</v-icon>
+                      </a>
+                    </div>
+                  </v-card-actions>
+                </v-card>
+              </v-col>
+              <v-col cols="12" sm="4" align="center">
+                <v-card elevation="20" width="250" shaped class="border">
+                  <v-card-title class="justify-center"
+                    >{{ item.mentor2Name }}
+                  </v-card-title>
+                  <v-card-actions class="justify-center justify-space-around">
+                    <div class="social-icons">
+                      <a :href="'mailto:' + item.mentor2Email">
+                        <v-icon class="i">{{ icons.mdiEmailOutline }}</v-icon>
+                      </a>
+                    </div>
+                    <div class="social-icons">
+                      <a :href="item.mentor2Telegram" target="_balnk">
+                        <v-icon class="i">{{ icons.mdiTelegram }}</v-icon>
+                      </a>
+                    </div>
+                  </v-card-actions>
+                </v-card>
+              </v-col>
+            </v-row>
+          </v-card-text>
+        </v-card>
+      </div>
+    </div>
   </v-container>
 </template>
 
@@ -132,7 +130,6 @@ export default {
   },
   data() {
     return {
-      tab: null,
       icons: {
         mdiTelegram,
         mdiEmailOutline,
@@ -143,17 +140,97 @@ export default {
         mdiGraphOutline,
         mdiRobot,
       },
+      mode: 'dark',
+      selectedIndex: 0,
+      tabTitles: [{ title: 'tab1' }, { title: 'tab2' }, { title: 'tab3' }],
+      tabs: [
+        { content: 'Tab1 1 Content ', isActive: false },
+        { content: 'Tab1 2 Content', isActive: false },
+        { content: 'Tab1 3 Content', isActive: false },
+      ],
     }
+  },
+  mounted() {
+    this.selectTab(0)
+  },
+  methods: {
+    changeMode() {
+      if (this.mode === 'dark') {
+        this.mode = 'light'
+      } else {
+        this.mode = 'dark'
+      }
+    },
+    selectTab(i) {
+      this.selectedIndex = i
+      this.items.forEach((tab, index) => {
+        tab.isActive = index === i
+      })
+    },
   },
 }
 </script>
 
-<style scoped>
-.shadow {
-  -moz-box-shadow: inset 0 0 15px #ffffff;
-  -webkit-box-shadow: inset 0 0 15px #ffffff;
-  box-shadow: inset 0 0 15px #ffffff;
+<style>
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  margin: 0;
+  padding: 20px;
 }
+
+ul.tabs__header {
+  display: block;
+  list-style: none;
+  margin: 0 0 0 20px;
+  padding: 0;
+}
+
+ul.tabs__header > li {
+  padding: 10px 60px;
+  border-radius: 10px;
+  margin: 0;
+  display: inline-block;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+ul.tabs__header > li.tab__selected {
+  font-weight: bold;
+  border-radius: 10px 10px 0 0;
+  border-bottom: 8px solid transparent;
+}
+
+.tab {
+  border-radius: 10px;
+}
+
+.tabs__dark .tab {
+  background-color: rgb(29, 29, 29);
+  color: #eee;
+}
+
+.tabs__dark li {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
+
+.tabs__dark li .icon {
+  color: rgb(0, 0, 0);
+}
+
+.tabs__dark li.tab__selected {
+  background-color: rgb(32, 32, 32);
+  color: rgb(255, 255, 255);
+}
+
+.tabs__dark li.tab__selected .icon {
+  /* background-color: rgb(255, 255, 255); */
+  color: white;
+  border-radius: 20%;
+}
+
 .shadow-title {
   -moz-box-shadow: inset 0 0 8px #ffffff;
   -webkit-box-shadow: inset 0 0 8px #ffffff;
@@ -200,7 +277,7 @@ hr {
   font-size: 1em;
 }
 .social-icons .i {
-  color: #fff;
+  color: rgb(0, 0, 0);
   position: absolute;
   top: 0.45em;
   left: 0.45em;
@@ -215,7 +292,7 @@ hr {
   height: 45px;
   border-radius: 100%;
   display: block;
-  background: linear-gradient(45deg, #c300ff, #c648c8);
+  background: linear-gradient(45deg, #ffffff, #ffffff);
   transition: all 165ms ease-out;
 }
 .social-icons a:hover:before {
@@ -228,7 +305,7 @@ hr {
   -ms-transform: scale(2.2);
   -webkit-transform: scale(2.2);
   color: #ffffff;
-  background: -webkit-linear-gradient(45deg, #cc00ff, #cc00ff);
+  background: -webkit-linear-gradient(45deg, #ffffff, #ffffff);
   background-clip: none;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -288,6 +365,20 @@ hr {
   .social-icons a:hover:before {
     transform: scale(1);
     opacity: 1;
+  }
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  ul.tabs__header > li {
+    padding: 10px 38px;
+    border-radius: 10px;
+    margin: 0;
+    display: inline-block;
+    margin-right: 12px;
+    cursor: pointer;
   }
 }
 </style>
