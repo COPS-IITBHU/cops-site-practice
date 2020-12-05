@@ -12,7 +12,7 @@
         href="https://github.com/COPS-IITBHU/Code-Of-Conduct/blob/master/README.md"
         >Code of Conduct</a
       >
-    </div> 
+    </div>
   </v-footer>
 </template>
 

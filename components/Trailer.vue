@@ -1,10 +1,10 @@
 <template>
   <div class="video">
     <youtube
+      ref="youtube"
       player-width="!fixed"
       :player-vars="{ autoplay: 1 }"
       :video-id="videoId"
-      ref="youtube"
       @ready="ready"
     />
   </div>

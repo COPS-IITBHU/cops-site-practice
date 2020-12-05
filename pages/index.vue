@@ -22,9 +22,9 @@
 </template>
 
 <script>
-import { mdiGithub, mdiGoogle, mdiFacebook, mdiSlack, mdiRss, mdiEmail } from "@mdi/js";
-import About from "~/components/About";
-import Trailer from "~/components/Trailer";
+import { mdiGithub, mdiGoogle, mdiFacebook, mdiRss, mdiEmail } from '@mdi/js'
+import About from '~/components/About'
+import Trailer from '~/components/Trailer'
 
 export default {
   components: {
@@ -41,23 +41,23 @@ export default {
         mdiEmail,
       },
       items: [
-        { icon: mdiGithub, url: "https://github.com/COPS-IITBHU" },
-        { icon: mdiFacebook, url: "https://www.facebook.com/cops.iitbhu" },
-        { icon: mdiGoogle, url: "https://groups.google.com/g/copsiitbhu" },
-        { icon: mdiEmail, url: "mailto:copsiitbu@gmail.com" },
-        { icon: mdiRss, url: "https://copsiitbhu.co.in/feed.xml" },
+        { icon: mdiGithub, url: 'https://github.com/COPS-IITBHU' },
+        { icon: mdiFacebook, url: 'https://www.facebook.com/cops.iitbhu' },
+        { icon: mdiGoogle, url: 'https://groups.google.com/g/copsiitbhu' },
+        { icon: mdiEmail, url: 'mailto:copsiitbu@gmail.com' },
+        { icon: mdiRss, url: 'https://copsiitbhu.co.in/feed.xml' },
       ],
-    };
+    }
   },
   head: {
-    title: "Home",
+    title: 'Home',
     meta: [
       {
-        hid: "description",
-        name: "description",
-        content: "Club of Programmers IIT BHU Landing Page",
+        hid: 'description',
+        name: 'description',
+        content: 'Club of Programmers IIT BHU Landing Page',
       },
     ],
   },
-};
+}
 </script>
