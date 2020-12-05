@@ -2,7 +2,7 @@
   <div>
     <v-row align="center" justify="center">
       <v-col cols="12" sm="12" md="6" align="center">
-        <avatar />
+        <trailer />
         <p></p>
         <br />
         <h2>Club of Programmers IIT(BHU), Varanasi</h2>
@@ -56,12 +56,12 @@ import {
   mdiEmail,
 } from '@mdi/js'
 import About from '~/components/About'
-import Avatar from '~/components/Avatar'
+import Trailer from '~/components/Trailer'
 
 export default {
   components: {
     About,
-    Avatar,
+    Trailer,
   },
   data() {
     return {
