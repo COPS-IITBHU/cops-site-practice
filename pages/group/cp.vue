@@ -17,7 +17,7 @@
           >
             {{ item.name }}
             <template v-slot:actions>
-              <v-icon color="primary">mdi-menu-down</v-icon>
+              <v-icon color="primary">{{ mdiMenuDown }}</v-icon>
             </template>
           </v-expansion-panel-header>
           <expansionPotw :tutorial="item.tutorial" article-type="Tutorial" />
@@ -30,6 +30,7 @@
 
 <script lang="ts">
 import { contentFunc, IContentDocument } from '@nuxt/content/types/content'
+import { mdiMenuDown } from '@mdi/js'
 import expansionPotw from '~/components/expansionPotw.vue'
 
 export default {
@@ -45,6 +46,21 @@ export default {
     return {
       items: (data as any).articles,
     }
+  },
+  data() {
+    return {
+      mdiMenuDown,
+    }
+  },
+  head: {
+    title: 'CP',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Competitive Programming Group IIT BHU',
+      },
+    ],
   },
 }
 </script>

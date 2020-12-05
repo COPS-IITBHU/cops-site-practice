@@ -8,22 +8,34 @@
         <h2>Club of Programmers IIT(BHU), Varanasi</h2>
         <v-row align="center" justify="center">
           <v-btn icon href="https://github.com/COPS-IITBHU">
-            <h1><fa :icon="['fab', 'github']" /></h1>
+            <h1>
+              <v-icon>{{ icons.mdiGithub }}</v-icon>
+            </h1>
           </v-btn>
           <v-btn icon href="https://www.facebook.com/cops.iitbhu">
-            <h1><fa :icon="['fab', 'facebook']" /></h1>
+            <h1>
+              <v-icon>{{ icons.mdiFacebook }}</v-icon>
+            </h1>
           </v-btn>
           <v-btn icon href="https://cops-iitbhu.slack.com/">
-            <h1><fa :icon="['fab', 'slack']" /></h1>
+            <h1>
+              <v-icon>{{ icons.mdiSlack }}</v-icon>
+            </h1>
           </v-btn>
           <v-btn icon href="https://groups.google.com/g/copsiitbhu">
-            <h1><fa :icon="['fab', 'google']" /></h1>
+            <h1>
+              <v-icon>{{ icons.mdiGoogle }}</v-icon>
+            </h1>
           </v-btn>
-          <v-btn icon href="mailto:contact@copsiitbhu.co.in">
-            <h1><fa :icon="['fas', 'envelope']" /></h1>
+          <v-btn icon href="mailto:copsiitbu@gmail.com">
+            <h1>
+              <v-icon>{{ icons.mdiEmail }}</v-icon>
+            </h1>
           </v-btn>
           <v-btn icon href="https://copsiitbhu.co.in/feed.xml">
-            <h1><fa :icon="['fas', 'rss']" /></h1>
+            <h1>
+              <v-icon>{{ icons.mdiRss }}</v-icon>
+            </h1>
           </v-btn>
         </v-row>
       </v-col>
@@ -35,6 +47,14 @@
 </template>
 
 <script>
+import {
+  mdiGithub,
+  mdiGoogle,
+  mdiFacebook,
+  mdiSlack,
+  mdiRss,
+  mdiEmail,
+} from '@mdi/js'
 import About from '~/components/About'
 import Avatar from '~/components/Avatar'
 
@@ -42,6 +62,28 @@ export default {
   components: {
     About,
     Avatar,
+  },
+  data() {
+    return {
+      icons: {
+        mdiFacebook,
+        mdiGithub,
+        mdiGoogle,
+        mdiRss,
+        mdiSlack,
+        mdiEmail,
+      },
+    }
+  },
+  head: {
+    title: 'Home',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Club of Programmers IIT BHU Landing Page',
+      },
+    ],
   },
 }
 </script>

@@ -10,7 +10,7 @@
           class="white--text tab"
         >
           {{ item.tabTitle }}
-          <v-icon>{{ item.icon }}</v-icon>
+          <v-icon>{{ icons[item.icon] }}</v-icon>
         </v-tab>
       </v-tabs>
 
@@ -47,11 +47,11 @@
                   <div>{{ item.content }}</div>
                   <v-card-actions class="justify-space-around mt-10">
                     <v-btn class="purple">
-                      <v-icon left>mdi-link-variant</v-icon>
+                      <v-icon left>{{ icons.mdiLinkVariant }}</v-icon>
                       Resources</v-btn
                     >
                     <v-btn class="purple">
-                      <v-icon left>mdi-poll</v-icon>
+                      <v-icon left>{{ icons.mdiPoll }}</v-icon>
                       LeaderBoard</v-btn
                     >
                   </v-card-actions>
@@ -59,7 +59,7 @@
               </v-row>
               <v-card-title class="justify-center mt-5"
                 ><v-chip class="ma-2 border" color="black">
-                  <v-icon left> mdi-account-circle-outline </v-icon>
+                  <v-icon left> {{ icons.mdiAccountCircleOutline }} </v-icon>
                   Mentors
                 </v-chip></v-card-title
               >
@@ -72,12 +72,12 @@
                     <v-card-actions class="justify-center justify-space-around">
                       <div class="social-icons">
                         <a :href="'mailto:' + item.mentor1Email">
-                          <v-icon class="i">mdi-email-outline</v-icon>
+                          <v-icon class="i">{{ icons.mdiEmailOutline }}</v-icon>
                         </a>
                       </div>
                       <div class="social-icons">
                         <a :href="item.mentor1Telegram" target="_blank">
-                          <v-icon class="i">mdi-telegram</v-icon>
+                          <v-icon class="i">{{ icons.mdiTelegram }}</v-icon>
                         </a>
                       </div>
                     </v-card-actions>
@@ -91,12 +91,12 @@
                     <v-card-actions class="justify-center justify-space-around">
                       <div class="social-icons">
                         <a :href="'mailto:' + item.mentor2Email">
-                          <v-icon class="i">mdi-email-outline</v-icon>
+                          <v-icon class="i">{{ icons.mdiEmailOutline }}</v-icon>
                         </a>
                       </div>
                       <div class="social-icons">
                         <a :href="item.mentor2Telegram" target="_balnk">
-                          <v-icon class="i">mdi-telegram</v-icon>
+                          <v-icon class="i">{{ icons.mdiTelegram }}</v-icon>
                         </a>
                       </div>
                     </v-card-actions>
@@ -112,6 +112,17 @@
 </template>
 
 <script>
+import {
+  mdiTelegram,
+  mdiEmailOutline,
+  mdiAccountCircleOutline,
+  mdiPoll,
+  mdiLinkVariant,
+  mdiGithub,
+  mdiGraphOutline,
+  mdiRobot,
+} from '@mdi/js'
+
 export default {
   props: {
     items: {
@@ -122,6 +133,16 @@ export default {
   data() {
     return {
       tab: null,
+      icons: {
+        mdiTelegram,
+        mdiEmailOutline,
+        mdiAccountCircleOutline,
+        mdiPoll,
+        mdiLinkVariant,
+        mdiGithub,
+        mdiGraphOutline,
+        mdiRobot,
+      },
     }
   },
 }
