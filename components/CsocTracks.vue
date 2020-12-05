@@ -57,7 +57,7 @@
               </v-col>
             </v-row>
             <v-card-title class="justify-center mt-5"
-              ><v-chip class="ma-2 text-subtitle-1" outlined color="white">
+              ><v-chip class="ma-2 text-h6" outlined color="white">
                 <v-icon left> {{ icons.mdiAccountCircleOutline }} </v-icon>
                 Mentors
               </v-chip></v-card-title
@@ -347,7 +347,8 @@ hr {
     transform: scale(1);
     -ms-transform: scale(1);
     -webkit-transform: scale(1);
-    background: -webkit-linear-gradient(45deg, #ffffff, #ffffff);
+    color: #000000;
+    background: -webkit-linear-gradient(45deg, #000000, #000000);
     background-clip: none;
     -webkit-background-clip: text;
   }
@@ -360,7 +361,7 @@ hr {
     height: 45px;
     border-radius: 100%;
     display: block;
-    background: linear-gradient(45deg, #c300ff, #c648c8);
+    background: linear-gradient(45deg, #ffffff, #ffffff);
   }
   .social-icons a:hover:before {
     transform: scale(1);
