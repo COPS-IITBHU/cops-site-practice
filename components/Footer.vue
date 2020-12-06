@@ -1,45 +1,27 @@
 <template>
-  <v-footer class="footer">
-    <div class="copyright">
-      Copyright &copy; {{ new Date().getFullYear() }} COPS
-    </div>
-    <div class="logo">
-      <img src="~/assets/images/new-cops-logo.jpg" width="60px" height="60px" />
-    </div>
-    <div class="link">
-      <a
-        target="_blank"
-        href="https://github.com/COPS-IITBHU/Code-Of-Conduct/blob/master/README.md"
-        >Code of Conduct</a
+  <v-footer>
+    <v-row justify="center" align="center" class="d-flex flex-wrap">
+      <div class="pr-4">
+        Copyright &copy; {{ new Date().getFullYear() }} COPS
+      </div>
+      <div
+        class="px-4"
+        style="border: solid #fff; border-width: 0 0.1em 0 0.1em"
       >
-    </div>
+        <img
+          src="~/assets/images/new-cops-logo.jpg"
+          width="75px"
+          height="75px"
+        />
+      </div>
+      <div class="ma-2">
+        <a
+          target="_blank"
+          href="https://github.com/COPS-IITBHU/Code-Of-Conduct/blob/master/README.md"
+          style="text-decoration-line: none; color: #fff"
+          >Code of Conduct</a
+        >
+      </div>
+    </v-row>
   </v-footer>
 </template>
-
-<script>
-export default {}
-</script>
-
-<style scoped>
-.footer {
-  justify-content: center;
-  display: flex;
-  flex-flow: row;
-  flex-wrap: wrap;
-}
-.link a {
-  margin: 10px;
-  text-decoration-line: none;
-  color: #fff;
-}
-.copyright {
-  text-decoration-color: #fff;
-  padding-right: 15px;
-}
-.logo {
-  padding-right: 15px;
-  padding-left: 15px;
-  border-right: 0.1em solid #fff;
-  border-left: 0.1em solid #fff;
-}
-</style>

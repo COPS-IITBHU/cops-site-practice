@@ -1,11 +1,11 @@
 <template>
-  <div class="video">
+  <div class="rounded-lg pa-2" align="center" justify="center">
     <youtube
       ref="youtube"
-      player-width="!fixed"
-      :player-vars="{ autoplay: 1 }"
       :video-id="videoId"
-      @ready="ready"
+      :player-vars="playerVars"
+      max-width="650px"
+      width="100%"
     />
   </div>
 </template>
@@ -15,32 +15,8 @@ export default {
   data: () => {
     return {
       videoId: 'b9pBQMns4lw',
+      playerVars: { autoplay: 1 },
     }
-  },
-  computed: {
-    player() {
-      return this.$refs.youtube.player
-    },
-  },
-  methods: {
-    ready(event) {
-      this.player = event.target
-    },
-    stop() {
-      this.player.stopVideo()
-    },
-    pause() {
-      this.player.pauseVideo()
-    },
   },
 }
 </script>
-
-<style scoped>
-.video {
-  position: relative;
-  border-radius: 10px;
-  padding: 10px;
-  width: 100%;
-}
-</style>

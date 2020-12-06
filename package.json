@@ -18,7 +18,7 @@
     "core-js": "^3.6.5",
     "nuxt": "^2.14.5",
     "thpace": "^1.2.0",
-    "vue-youtube-embed": "^2.2.2"
+    "vue-youtube": "^1.4.0"
   },
   "devDependencies": {
     "@mdi/js": "^5.8.55",
