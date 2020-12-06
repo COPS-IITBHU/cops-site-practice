@@ -98,49 +98,61 @@
 </template>
 
 <script lang="ts">
+import {
+  mdiLaptopChromebook,
+  mdiBookshelf,
+  mdiMapClock,
+  mdiAccountGroup,
+  mdiChartLineVariant,
+  mdiGithub,
+  mdiCircleSlice3,
+  mdiHome,
+  mdiBlogger,
+} from '@mdi/js'
+
 export default {
   data() {
     return {
       sideNav: false,
       links: [
-        { icon: 'mdi-home', title: 'Home', route: '/', hover: false },
-        { icon: 'mdi-blogger', title: 'Blog', route: '/blogs', hover: false },
+        { icon: mdiHome, title: 'Home', route: '/', hover: false },
+        { icon: mdiBlogger, title: 'Blog', route: '/blogs', hover: false },
       ],
       multiLink: [
         {
-          icon: 'mdi-laptop-chromebook',
+          icon: mdiLaptopChromebook,
           title: 'CSOC',
           route: '',
           subroutes: [
             {
-              icon: 'mdi-bookshelf',
+              icon: mdiBookshelf,
               title: 'Resources',
-              route: '/csoc/resources',
+              route: '/csoc',
             },
             {
-              icon: 'mdi-map-clock',
+              icon: mdiMapClock,
               title: 'Timeline',
               route: '/csoc/timeline',
             },
           ],
         },
         {
-          icon: 'mdi-account-group',
+          icon: mdiAccountGroup,
           title: 'Groups',
           route: '',
           subroutes: [
             {
-              icon: 'mdi-chart-line-variant',
+              icon: mdiChartLineVariant,
               title: 'CP',
               route: '/group/cp',
             },
             {
-              icon: 'mdi-github',
+              icon: mdiGithub,
               title: 'Dev',
               route: '/group/dev',
             },
             {
-              icon: 'mdi-circle-slice-3',
+              icon: mdiCircleSlice3,
               title: 'ML',
               route: '/group/ml',
             },
