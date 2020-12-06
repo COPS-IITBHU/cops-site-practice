@@ -119,14 +119,14 @@ export default {
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   .timeline-container {
-  width: 75%;
+  width: 70%;
 }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
   .timeline-container {
-  width: 70%;
+  width: 60%;
 }
 }
 .v-btn{
