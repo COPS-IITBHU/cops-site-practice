@@ -106,7 +106,7 @@ export default {
 }
 @media (min-width: 544px) {
   .timeline-container {
-  width: 80%;
+  width: 100%;
 }
 }
 
@@ -119,7 +119,7 @@ export default {
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   .timeline-container {
-  width: 80%;
+  width: 75%;
 }
 }
 
