@@ -127,7 +127,7 @@ export default {
             {
               icon: mdiBookshelf,
               title: 'Resources',
-              route: '/csoc',
+              route: '/csoc/resources',
             },
             {
               icon: mdiMapClock,

@@ -18,9 +18,9 @@ export default {
   data() {
     return {
       items: [],
-      devImage: require('../assets/images/dev.png'),
-      cpImage: require('../assets/images/cp.png'),
-      mlImage: require('../assets/images/ml.png'),
+      devImage: require('../../assets/images/dev.png'),
+      cpImage: require('../../assets/images/cp.png'),
+      mlImage: require('../../assets/images/ml.png'),
     }
   },
   head: {
