@@ -1,6 +1,6 @@
 <template>
   <v-container class="container timeline-container">
-    <v-timeline $>
+    <v-timeline>
       <v-timeline-item
         v-for="(item, i) in items"
         :key="i"

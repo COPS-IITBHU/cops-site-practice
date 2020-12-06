@@ -1,7 +1,7 @@
 <template>
-  <div class="timeline">
+  <v-container>
     <CommonTimeline :items="items" />
-  </div>
+  </v-container>
 </template>
 
 <script>
@@ -22,8 +22,3 @@ export default {
   },
 }
 </script>
-<style scoped>
-.timeline {
-  margin: 10% 0px;
-}
-</style>
