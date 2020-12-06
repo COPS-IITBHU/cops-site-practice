@@ -1,6 +1,7 @@
 <template>
   <div class="timeline">
     <CommonTimeline :items="items" />
+  </v-container>
   </div>
 </template>
 
