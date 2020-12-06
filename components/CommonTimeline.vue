@@ -11,7 +11,7 @@
       >
         <template v-slot:opposite>
           <span
-            v-if="i%2==0"
+            v-if="i % 2 == 0"
             data-aos="zoom-in-left"
             data-aos-delay="70"
             data-aos-duration="800"
@@ -29,16 +29,16 @@
         </template>
 
         <div
-          v-if="i%2==0"
+          v-if="i % 2 == 0"
           data-aos="zoom-in-left"
           data-aos-delay="80"
           data-aos-duration="900"
           class=""
         >
-          <h2
-            :class="`mb-4 item-title ${item.color}--text`"
-          >{{item.title}}</h2>
-          <div class="item-content">{{item.content}}</div>
+          <h2 :class="`mb-4 item-title ${item.color}--text`">
+            {{ item.title }}
+          </h2>
+          <div class="item-content">{{ item.content }}</div>
           <v-btn
             v-if="item.button"
             href="https://www.google.com/"
@@ -46,7 +46,8 @@
             :color="item.color"
             class="mt-4"
             outlined
-          >Button</v-btn>
+            >Button</v-btn
+          >
         </div>
         <div
           v-else
@@ -55,10 +56,10 @@
           data-aos-duration="900"
           class=""
         >
-          <h2
-            :class="`mb-4 item-title ${item.color}--text`"
-          >{{item.title}}</h2>
-          <div class="item-content">{{item.content}}</div>
+          <h2 :class="`mb-4 item-title ${item.color}--text`">
+            {{ item.title }}
+          </h2>
+          <div class="item-content">{{ item.content }}</div>
           <v-btn
             v-if="item.button"
             href="https://www.google.com/"
@@ -66,13 +67,13 @@
             :color="item.color"
             class="mt-4"
             outlined
-          >Button</v-btn>
+            >Button</v-btn
+          >
         </div>
       </v-timeline-item>
     </v-timeline>
   </v-container>
 </template>
-
 
 <script>
 // You can also use <link> for styles
@@ -98,7 +99,7 @@ export default {
   font-family: 'Neucha', cursive;
 }
 .item-content {
-font-family: 'Dosis', sans-serif;
+  font-family: 'Dosis', sans-serif;
 }
 .item-date {
   font-size: x-large;

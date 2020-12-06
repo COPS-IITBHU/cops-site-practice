@@ -23,7 +23,7 @@ export default {
 }
 </script>
 <style scoped>
-.timeline{
+.timeline {
   margin: 10% 0px;
 }
 </style>
