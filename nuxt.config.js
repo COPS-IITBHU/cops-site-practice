@@ -31,10 +31,14 @@ export default {
   css: [],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
+<<<<<<< HEAD
   plugins: [
     { src: '@/plugins/youtube', ssr: false },
     { src: '@/plugins/aos', ssr: false },
   ],
+=======
+  plugins: [{ src: '@/plugins/youtube', ssr: false },{ src: "@/plugins/aos", ssr: false }],
+>>>>>>> 94b61efd462999e51aeb7cc2c639d017eda6778f
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
