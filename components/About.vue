@@ -9,3 +9,14 @@
     </v-card-text>
   </v-card>
 </template>
+
+<script>
+export default {
+  props: {
+    paras: {
+      type: String,
+      default: '',
+    },
+  },
+}
+</script>
