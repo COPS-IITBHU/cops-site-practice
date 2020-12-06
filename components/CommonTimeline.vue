@@ -99,6 +99,7 @@ export default {
 }
 .item-content {
   font-family: 'Dosis', sans-serif;
+  text-align: justify;
 }
 .item-date {
   font-size: x-large;
