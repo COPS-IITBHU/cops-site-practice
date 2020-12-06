@@ -1,13 +1,14 @@
 <template>
+<v-container>
   <div class="timeline">
     <CommonTimeline :items="items" />
-  </v-container>
   </div>
+</v-container>
 </template>
 
 <script>
 import CommonTimeline from '@/components/CommonTimeline'
-
+import '@mdi/font/css/materialdesignicons.css'
 export default {
   components: {
     CommonTimeline,

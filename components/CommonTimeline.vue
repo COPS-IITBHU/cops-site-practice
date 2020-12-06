@@ -7,13 +7,12 @@
         :color="item.color"
         :icon="item.icon"
         fill-dot
-        small
       >
         <template v-slot:opposite>
           <span
             v-if="i % 2 == 0"
             data-aos="zoom-in-left"
-            data-aos-delay="70"
+            data-aos-delay="60"
             data-aos-duration="800"
             :class="`item-date ${item.color}--text`"
             v-text="item.year"
@@ -21,7 +20,7 @@
           <span
             v-else
             data-aos="zoom-in-right"
-            data-aos-delay="70"
+            data-aos-delay="60"
             data-aos-duration="800"
             :class="`item-date ${item.color}--text`"
             v-text="item.year"
@@ -44,7 +43,8 @@
             href="https://www.google.com/"
             target="_blank"
             :color="item.color"
-            class="mt-4"
+            class="mt-4 px-2"
+            style="font-size:small;"
             outlined
             >Button</v-btn
           >
@@ -59,13 +59,14 @@
           <h2 :class="`mb-4 item-title ${item.color}--text`">
             {{ item.title }}
           </h2>
-          <div class="item-content">{{ item.content }}</div>
+          <div class="item-content" >{{ item.content }}</div>
           <v-btn
             v-if="item.button"
             href="https://www.google.com/"
             target="_blank"
             :color="item.color"
-            class="mt-4"
+            class="mt-4 px-2"
+            style="font-size:small;"
             outlined
             >Button</v-btn
           >
@@ -92,9 +93,7 @@ export default {
 }
 </script>
 <style scoped>
-.timeline-container {
-  width: 60%;
-}
+
 .item-title {
   font-family: 'Neucha', cursive;
 }
@@ -104,5 +103,33 @@ export default {
 .item-date {
   font-size: x-large;
   font-family: 'Neucha', cursive;
+}
+@media (min-width: 544px) {
+  .timeline-container {
+  width: 80%;
+}
+}
+
+@media (min-width: 768px) {
+  .timeline-container {
+  width: 80%;
+}
+}
+ 
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .timeline-container {
+  width: 80%;
+}
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .timeline-container {
+  width: 70%;
+}
+}
+.v-btn{
+  padding: 0 10px;
 }
 </style>
