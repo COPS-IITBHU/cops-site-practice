@@ -40,8 +40,9 @@
             :key="link.label"
             class="text-subtitle-1 mx-1 px-3 text-capitalize"
             :href="link.url"
-            >{{ link.label }}</v-btn
           >
+            {{ link.label }}
+          </v-btn>
         </v-row>
       </v-col>
     </v-row>

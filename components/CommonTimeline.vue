@@ -46,8 +46,9 @@
             :color="item.color"
             class="mt-4"
             outlined
-            >Button</v-btn
           >
+            Button
+          </v-btn>
         </div>
         <div
           v-else
@@ -67,8 +68,9 @@
             :color="item.color"
             class="mt-4"
             outlined
-            >Button</v-btn
           >
+            Button
+          </v-btn>
         </div>
       </v-timeline-item>
     </v-timeline>
