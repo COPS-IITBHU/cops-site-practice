@@ -1,3 +1,4 @@
+import { join } from 'path'
 import colors from 'vuetify/es5/util/colors'
 
 export default {
@@ -21,8 +22,7 @@ export default {
       },
       {
         rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css2?family=Dosis:wght@500&family=Neucha&family=Raleway:wght@500&display=swap',
+        href: 'https://fonts.googleapis.com/css2?family=Dosis:wght@500&family=Neucha&family=Raleway:wght@500&display=swap',
       },
     ],
   },
@@ -34,6 +34,7 @@ export default {
   plugins: [
     { src: '@/plugins/youtube', ssr: false },
     { src: '@/plugins/aos', ssr: false },
+    '@/plugins/composition-api',
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -45,6 +46,10 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/vuetify,
     '@nuxtjs/vuetify',
+    // Doc: https://github.com/nuxt-community/color-mode-module
+    '@nuxtjs/color-mode',
+    // Doc: https://github.com/nuxt-community/tailwindcss-module
+    '@nuxtjs/tailwindcss',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -88,5 +93,19 @@ export default {
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {},
+  build: {
+    extractCSS: {
+      ignoreOrder: true,
+    },
+    postcss: {
+      plugins: {
+        tailwindcss: join(__dirname, 'tailwind.config.js'),
+        'postcss-nested': true,
+        autoprefixer: true,
+      },
+    },
+  },
+  colorMode: {
+    classSuffix: '',
+  },
 }
