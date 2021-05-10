@@ -108,4 +108,9 @@ export default {
   colorMode: {
     classSuffix: '',
   },
+  tailwindcss: {
+    cssPath: '~/assets/css/tailwind.css',
+    configPath: 'tailwind.config.js',
+    mode: 'jit',
+  },
 }
