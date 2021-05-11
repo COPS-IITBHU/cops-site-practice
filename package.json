@@ -13,6 +13,7 @@
     "postinstall": "is-ci || husky install"
   },
   "dependencies": {
+    "@iconify/iconify": "2",
     "@nuxt/content": "^1.8.1",
     "@nuxtjs/axios": "^5.12.2",
     "@nuxtjs/pwa": "^3.0.2",
@@ -20,6 +21,7 @@
     "aos": "^2.3.4",
     "core-js": "^3.6.5",
     "nuxt": "^2.14.5",
+    "nuxt-purge-icons-module": "^0.7.0",
     "thpace": "^1.2.0",
     "vue-youtube": "^1.4.0"
   },

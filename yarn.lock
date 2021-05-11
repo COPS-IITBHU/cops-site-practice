@@ -973,6 +973,20 @@
   dependencies:
     purgecss "^3.1.3"
 
+"@iconify/iconify@2", "@iconify/iconify@>=2.0.0-rc.6":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@iconify/iconify/-/iconify-2.0.0.tgz#f87513410f61a749c4e74b9b84d90ce27d19f3cb"
+  integrity sha512-9D+LKG9lC8Wqc6m1u1HMzHO13VWoHy7pqJEJXQW94WPn22nRGCjvs62xfj3VTSIlxucn+XHQpNH9GsrugGuKDw==
+  dependencies:
+    cross-fetch "^3.0.6"
+
+"@iconify/iconify@2.0.0-rc.6":
+  version "2.0.0-rc.6"
+  resolved "https://registry.yarnpkg.com/@iconify/iconify/-/iconify-2.0.0-rc.6.tgz#e3f5376b63b441dcb3696317784b98e2e678cf46"
+  integrity sha512-pXvLXqLPQsjpDY4qbbyh5cPEtakTfWfQCAo6SdYNhYQzat+/0fbeEhScryqaketNAG0bT4/+deKezkJZTvbuSg==
+  dependencies:
+    cross-fetch "^3.0.6"
+
 "@koa/router@^9.0.1":
   version "9.4.0"
   resolved "https://registry.yarnpkg.com/@koa/router/-/router-9.4.0.tgz#734b64c0ae566eb5af752df71e4143edc4748e48"
@@ -1556,6 +1570,24 @@
   version "1.0.0-next.12"
   resolved "https://registry.yarnpkg.com/@polka/url/-/url-1.0.0-next.12.tgz#431ec342a7195622f86688bbda82e3166ce8cb28"
   integrity sha512-6RglhutqrGFMO1MNUXp95RBuYIuc8wTnMAV5MUhLmjTOy78ncwOw7RgeQ/HeymkKXRhZd0s2DNrM1rL7unk3MQ==
+
+"@purge-icons/core@^0.7.0":
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/@purge-icons/core/-/core-0.7.0.tgz#097ba8d4d8b7e8d662df687bd2391eb8b83caba0"
+  integrity sha512-PaCeTFjkQUX+MzBsNg3L8x5aCZqXwaUSNw1FY3Jn7wlLqNqxRNoShw5P//a1DQAy7hLlUHvEL6IGeDoN/xf98A==
+  dependencies:
+    "@iconify/iconify" "2.0.0-rc.6"
+    axios "^0.21.1"
+    debug "^4.3.2"
+    fast-glob "^3.2.5"
+    fs-extra "^9.1.0"
+
+"@purge-icons/generated@^0.7.0":
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/@purge-icons/generated/-/generated-0.7.0.tgz#d87dbb3145e8b9a64e2e12ff660aa3cb13cbeb56"
+  integrity sha512-4SHVpZnKaW5ekRTjhPY9b1pALVlF0pDuGIDRAlxAm0V+gQVOL0+Ghav6U9XqXFj2kiG1+eQ8swpvB+kd0a+tqg==
+  dependencies:
+    "@iconify/iconify" ">=2.0.0-rc.6"
 
 "@types/anymatch@*":
   version "1.3.1"
@@ -3792,6 +3824,13 @@ create-require@^1.1.1:
   resolved "https://registry.yarnpkg.com/create-require/-/create-require-1.1.1.tgz#c1d7e8f1e5f6cfc9ff65f9cd352d37348756c333"
   integrity sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==
 
+cross-fetch@^3.0.6:
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-3.1.4.tgz#9723f3a3a247bf8b89039f3a380a9244e8fa2f39"
+  integrity sha512-1eAtFWdIubi6T4XPy6ei9iUFoKpUkIF971QLN8lIvvvwueI65+Nw5haMNKUwfJxabqlIIDODJKGrQ66gxC0PbQ==
+  dependencies:
+    node-fetch "2.6.1"
+
 cross-spawn@^7.0.2, cross-spawn@^7.0.3:
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-7.0.3.tgz#f73a85b9d5d41d045551c177e2882d4ac85728a6"
@@ -4077,6 +4116,13 @@ debug@^4.0.0, debug@^4.0.1, debug@^4.1.0, debug@^4.1.1:
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.1.tgz#f0d229c505e0c6d8c49ac553d1b13dc183f6b2ee"
   integrity sha512-doEwdvm4PCeK4K3RQN2ZC2BYUBaxwLARCqZmMjtF8a51J2Rb0xpVloFRnCODwqjpwnAoao4pelN8l3RJdv3gRQ==
+  dependencies:
+    ms "2.1.2"
+
+debug@^4.3.2:
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.2.tgz#f0a49c18ac8779e31d4a0c6029dfb76873c7428b"
+  integrity sha512-mOp8wKcvj7XxC78zLgw/ZA+6TSgkoE2C/ienthhRD298T7UNwAg9diBpLRxC0mOezLl4B0xV7M0cCO6P/O0Xhw==
   dependencies:
     ms "2.1.2"
 
@@ -7430,7 +7476,7 @@ node-emoji@^1.8.1:
   dependencies:
     lodash.toarray "^4.4.0"
 
-node-fetch@^2.6.1:
+node-fetch@2.6.1, node-fetch@^2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
   integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
@@ -7572,6 +7618,14 @@ num2fraction@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/num2fraction/-/num2fraction-1.2.2.tgz#6f682b6a027a4e9ddfa4564cd2589d1d4e669ede"
   integrity sha1-b2gragJ6Tp3fpFZM0lidHU5mnt4=
+
+nuxt-purge-icons-module@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/nuxt-purge-icons-module/-/nuxt-purge-icons-module-0.7.0.tgz#34a46affd95e74b7bd1c3a40e61c15b009c1c5de"
+  integrity sha512-sldOBwAKlt0ZkbcMqg8UiVbPBB0d0zjHS13bE+iklebNgwTm3hLE8NMTe551/T5BAnfHOXmV7Mr11iwv7hiQZA==
+  dependencies:
+    "@purge-icons/generated" "^0.7.0"
+    purge-icons-webpack-plugin "^0.7.0"
 
 nuxt@^2.14.5:
   version "2.15.5"
@@ -9068,6 +9122,15 @@ punycode@^2.1.0:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
+
+purge-icons-webpack-plugin@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/purge-icons-webpack-plugin/-/purge-icons-webpack-plugin-0.7.0.tgz#f458e1afbdb8b875d5b690a84c9fbeabbebf195a"
+  integrity sha512-M/6UA3tx9jIMwQOHB0Z4pdL03lA1NZx+iPgypQeGoU7xrrjVFsEtR9gYyGkYeF2Mb8Zk+4OWUuCjWkqYzziT2w==
+  dependencies:
+    "@purge-icons/core" "^0.7.0"
+    "@purge-icons/generated" "^0.7.0"
+    webpack-virtual-modules "^0.4.2"
 
 purgecss@^3.1.3:
   version "3.1.3"
@@ -11243,6 +11306,11 @@ webpack-sources@^2.1.1:
   dependencies:
     source-list-map "^2.0.1"
     source-map "^0.6.1"
+
+webpack-virtual-modules@^0.4.2:
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/webpack-virtual-modules/-/webpack-virtual-modules-0.4.2.tgz#68ce4479df7334a491b7a3f3bead47fe382947d9"
+  integrity sha512-OUsT1VZhArN8nY7g6mMlw91HWnXcNXsIQjsQ83WteF4ViZ6YXqF2sWKOTDIZ0H+PPiApQdszLdZIrD7NNlU0Yw==
 
 webpack@^4.46.0:
   version "4.46.0"

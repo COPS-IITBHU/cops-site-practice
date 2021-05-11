@@ -50,6 +50,7 @@ export default {
     '@nuxtjs/color-mode',
     // Doc: https://github.com/nuxt-community/tailwindcss-module
     '@nuxtjs/tailwindcss',
+    'nuxt-purge-icons-module',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -77,7 +78,7 @@ export default {
       iconfont: 'mdiSvg',
     },
     theme: {
-      dark: true,
+      dark: false,
       themes: {
         dark: {
           primary: colors.blue.darken2,
