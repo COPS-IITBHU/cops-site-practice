@@ -6,8 +6,8 @@
           <v-card-title class="justify-center">
             <v-chip color="black" class="border">
               <h3>Join the Force</h3>
-            </v-chip></v-card-title
-          >
+            </v-chip>
+          </v-card-title>
           <v-row>
             <v-col sm="6" align="center">
               <h5 style="padding-bottom: 5px">Telegram</h5>

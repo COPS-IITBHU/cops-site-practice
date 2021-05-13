@@ -9,6 +9,7 @@
           :key="index"
           :class="{ tab__selected: index == selectedIndex }"
           @click="selectTab(index)"
+          @keydown="selectTab(index)"
         >
           <v-icon class="d-none d-sm-flex icon">{{ icons[tab.icon] }}</v-icon>
           <span> {{ tab.tabTitle }} </span>
@@ -41,33 +42,34 @@
                   </v-card-title>
                   <v-card-text
                     class="white--text text-justify text-md-subtitle-1"
-                    >{{ item.content }}</v-card-text
                   >
+                    {{ item.content }}
+                  </v-card-text>
                   <v-card-actions class="justify-space-around mt-10 mb-10">
                     <v-btn class="white black--text">
                       <v-icon left>{{ icons.mdiLinkVariant }}</v-icon>
-                      Resources</v-btn
-                    >
+                      Resources
+                    </v-btn>
                     <v-btn class="white black--text">
                       <v-icon left>{{ icons.mdiPoll }}</v-icon>
-                      LeaderBoard</v-btn
-                    >
+                      LeaderBoard
+                    </v-btn>
                   </v-card-actions>
                 </v-card>
               </v-col>
             </v-row>
-            <v-card-title class="justify-center mt-5"
-              ><v-chip class="ma-2 text-h6" outlined color="white">
+            <v-card-title class="justify-center mt-5">
+              <v-chip class="ma-2 text-h6" outlined color="white">
                 <v-icon left> {{ icons.mdiAccountCircleOutline }} </v-icon>
                 Mentors
-              </v-chip></v-card-title
-            >
+              </v-chip>
+            </v-card-title>
             <v-row class="justify-center">
               <v-col cols="12" sm="4" align="center">
                 <v-card elevation="20" shaped width="250" class="border">
-                  <v-card-title class="justify-center">{{
-                    item.mentor1Name
-                  }}</v-card-title>
+                  <v-card-title class="justify-center">
+                    {{ item.mentor1Name }}
+                  </v-card-title>
                   <v-card-actions class="justify-center justify-space-around">
                     <div class="social-icons">
                       <a :href="'mailto:' + item.mentor1Email">
@@ -84,8 +86,8 @@
               </v-col>
               <v-col cols="12" sm="4" align="center">
                 <v-card elevation="20" width="250" shaped class="border">
-                  <v-card-title class="justify-center"
-                    >{{ item.mentor2Name }}
+                  <v-card-title class="justify-center">
+                    {{ item.mentor2Name }}
                   </v-card-title>
                   <v-card-actions class="justify-center justify-space-around">
                     <div class="social-icons">

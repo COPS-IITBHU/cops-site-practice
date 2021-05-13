@@ -3,21 +3,25 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt-ts",
-    "build": "nuxt-ts build",
-    "start": "nuxt-ts start",
-    "generate": "nuxt-ts generate",
-    "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "lint": "yarn lint:js"
+    "dev": "nuxt",
+    "build": "nuxt build -a -m=client",
+    "start": "nuxt start",
+    "generate": "nuxt generate -m",
+    "lint": "eslint --ext .js,.vue,.ts --ignore-path .gitignore .",
+    "lint:fix": "yarn lint --fix",
+    "format": "prettier --write . --ignore-path ./.gitignore",
+    "postinstall": "is-ci || husky install"
   },
   "dependencies": {
+    "@iconify/iconify": "2",
     "@nuxt/content": "^1.8.1",
-    "@nuxt/typescript-runtime": "^2.0.0",
     "@nuxtjs/axios": "^5.12.2",
     "@nuxtjs/pwa": "^3.0.2",
+    "@vue/composition-api": "^1.0.0-rc.8",
     "aos": "^2.3.4",
     "core-js": "^3.6.5",
     "nuxt": "^2.14.5",
+    "nuxt-purge-icons-module": "^0.7.0",
     "thpace": "^1.2.0",
     "vue-youtube": "^1.4.0"
   },
@@ -25,15 +29,24 @@
     "@mdi/js": "^5.8.55",
     "@nuxt/types": "^2.14.5",
     "@nuxt/typescript-build": "^2.0.3",
+    "@nuxtjs/color-mode": "^2.0.5",
     "@nuxtjs/eslint-config": "^3.1.0",
     "@nuxtjs/eslint-config-typescript": "^3.0.0",
     "@nuxtjs/eslint-module": "^2.0.0",
+    "@nuxtjs/tailwindcss": "^4.1.1",
     "@nuxtjs/vuetify": "^1.11.2",
+    "autoprefixer": "^9",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.8.1",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-nuxt": "^1.0.0",
     "eslint-plugin-prettier": "^3.1.4",
-    "prettier": "^2.1.1"
+    "eslint-plugin-vuejs-accessibility": "^0.6.1",
+    "husky": "^6.0.0",
+    "is-ci": "^3.0.0",
+    "postcss": "^8.2.14",
+    "postcss-nested": "^5.0.5",
+    "prettier": "^2.1.1",
+    "tailwindcss": "^2.1.2"
   }
 }

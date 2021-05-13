@@ -11,7 +11,12 @@
       </v-toolbar-title>
       <!-- <v-spacer></v-spacer> -->
       <nav
-        class="d-none d-sm-flex justify-space-around flex-grow-1 flex-lg-grow-0 ml-lg-auto"
+        class="
+          d-none d-sm-flex
+          justify-space-around
+          flex-grow-1 flex-lg-grow-0
+          ml-lg-auto
+        "
       >
         <span v-for="item in links" :key="item.title">
           <v-btn
@@ -47,12 +52,12 @@
               router
               exact
             >
-              <v-list-item-action
-                ><v-icon medium>{{ subroute.icon }}</v-icon></v-list-item-action
-              >
-              <v-list-item-content class="subtitle-1">{{
-                subroute.title
-              }}</v-list-item-content>
+              <v-list-item-action>
+                <v-icon medium>{{ subroute.icon }}</v-icon>
+              </v-list-item-action>
+              <v-list-item-content class="subtitle-1">
+                {{ subroute.title }}
+              </v-list-item-content>
             </v-list-item>
           </v-list>
         </v-menu>
@@ -67,9 +72,9 @@
           router
           exact
         >
-          <v-list-item-action
-            ><v-icon>{{ item.icon }}</v-icon></v-list-item-action
-          >
+          <v-list-item-action>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-action>
           <v-list-item-content>{{ item.title }}</v-list-item-content>
         </v-list-item>
       </v-list>
@@ -86,9 +91,9 @@
             router
             exact
           >
-            <v-list-item-action
-              ><v-icon>{{ subroute.icon }}</v-icon></v-list-item-action
-            >
+            <v-list-item-action>
+              <v-icon>{{ subroute.icon }}</v-icon>
+            </v-list-item-action>
             <v-list-item-content>{{ subroute.title }}</v-list-item-content>
           </v-list-item>
         </template>
