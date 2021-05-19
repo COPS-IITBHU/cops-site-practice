@@ -6,13 +6,6 @@
         <p></p>
         <br />
         <h2>Club of Programmers IIT(BHU), Varanasi</h2>
-        <v-row align="center" justify="center">
-          <v-btn v-for="item in items" :key="item.id" icon :href="item.url">
-            <h1>
-              <v-icon>{{ item.icon }}</v-icon>
-            </h1>
-          </v-btn>
-        </v-row>
       </v-col>
       <v-col cols="12" sm="12" md="6">
         <about>
@@ -59,13 +52,6 @@ export default {
           paragraph:
             'Although the club has been functioning quite well as compared to other clubs, still, a lot of things needs to be done. Some great initiatives were taken by the current secretaries, including the formation of smaller groups focussed on specific areas (competitive programming group, development group and machine learning group) and the fresher’s mentorship program. Still there are lot of things that the club can improve upon. We hope that we are able to take this momentum forward.',
         },
-      ],
-      items: [
-        { icon: mdiGithub, url: 'https://github.com/COPS-IITBHU' },
-        { icon: mdiFacebook, url: 'https://www.facebook.com/cops.iitbhu' },
-        { icon: mdiGoogle, url: 'https://groups.google.com/g/copsiitbhu' },
-        { icon: mdiEmail, url: 'mailto:copsiitbu@gmail.com' },
-        { icon: mdiRss, url: 'https://copsiitbhu.co.in/feed.xml' },
       ],
     }
   },
