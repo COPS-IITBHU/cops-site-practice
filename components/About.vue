@@ -1,6 +1,8 @@
 <template>
-  <div class="ml-5 headline tw-p-5 text-center tw-shadow-xl tw-w-12/13" >
-    <div align="centre" justify="space-around my-2.5" class="tw-mt-0 tw-mb-1.5">About us</div>
+  <div class="ml-5 headline tw-p-5 text-center tw-shadow-xl tw-w-12/13">
+    <div align="centre" justify="space-around my-2.5" class="tw-mt-0 tw-mb-1.5">
+      About us
+    </div>
     <div class="text-center tw-text-gray-500">
       <p v-for="para in paras" :key="para.paragraph" class="text-body-1">
         {{ para.paragraph }}
@@ -27,8 +29,8 @@ export default {
           paragraph:
             'Although the club has been functioning quite well as compared to other clubs, still, a lot of things needs to be done. Some great initiatives were taken by the current secretaries, including the formation of smaller groups focussed on specific areas (competitive programming group, development group and machine learning group) and the fresher’s mentorship program. Still there are lot of things that the club can improve upon. We hope that we are able to take this momentum forward.',
         },
-      ]
+      ],
     }
-  }
+  },
 }
 </script>
