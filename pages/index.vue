@@ -1,20 +1,37 @@
 <template>
   <div>
-    <v-row align="center" justify="center">
-      <v-col cols="12" sm="12" md="6" align="center">
+    <div class="tw-flex tw-items-center">
+      <div class="tw-w-1/2 tw-h-90 tw-p-0.5 tw-mr-5 tw-mt-10">
         <trailer />
         <p></p>
         <br />
-        <h2>Club of Programmers IIT(BHU), Varanasi</h2>
-        <v-row align="center" justify="center">
-          <v-btn v-for="item in items" :key="item.id" icon :href="item.url">
-            <h1>
-              <v-icon>{{ item.icon }}</v-icon>
-            </h1>
-          </v-btn>
-        </v-row>
-      </v-col>
-      <v-col cols="12" sm="12" md="6">
+        <div class="tw-flex tw-justify-center">
+          <h2>Club of Programmers IIT(BHU), Varanasi</h2>
+        </div>
+        <div class="tw-flex tw-justify-center tw--mt-2">
+          <div
+            v-for="item in items"
+            :key="item.url"
+            @click="iconClick(item)"
+            @keydown="iconClick(item)"
+          >
+            <div class="tw-m-1">
+              <span
+                class="
+                  iconify
+                  tw-w-6 tw-h-6
+                  hover:tw-scale-110
+                  tw-transform tw-cursor-pointer
+                "
+                :data-icon="item.icon"
+                data-inline="false"
+              >
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tw-w-1/2">
         <about>
           <template v-slot:p1>
             <p v-for="para in paras" :key="para.paragraph" class="text-body-1">
@@ -22,13 +39,12 @@
             </p>
           </template>
         </about>
-      </v-col>
-    </v-row>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import { mdiGithub, mdiGoogle, mdiFacebook, mdiRss, mdiEmail } from '@mdi/js'
 import About from '~/components/About'
 import Trailer from '~/components/Trailer'
 
@@ -39,13 +55,6 @@ export default {
   },
   data() {
     return {
-      icons: {
-        mdiFacebook,
-        mdiGithub,
-        mdiGoogle,
-        mdiRss,
-        mdiEmail,
-      },
       paras: [
         {
           paragraph:
@@ -61,13 +70,18 @@ export default {
         },
       ],
       items: [
-        { icon: mdiGithub, url: 'https://github.com/COPS-IITBHU' },
-        { icon: mdiFacebook, url: 'https://www.facebook.com/cops.iitbhu' },
-        { icon: mdiGoogle, url: 'https://groups.google.com/g/copsiitbhu' },
-        { icon: mdiEmail, url: 'mailto:copsiitbu@gmail.com' },
-        { icon: mdiRss, url: 'https://copsiitbhu.co.in/feed.xml' },
+        { icon: 'mdi:github', url: 'https://github.com/COPS-IITBHU' },
+        { icon: 'mdi:facebook', url: 'https://www.facebook.com/cops.iitbhu' },
+        { icon: 'mdi:google', url: 'https://groups.google.com/g/copsiitbhu' },
+        { icon: 'mdi:email', url: 'mailto:copsiitbu@gmail.com' },
+        { icon: 'mdi:rss', url: 'https://copsiitbhu.co.in/feed.xml' },
       ],
     }
+  },
+  methods: {
+    iconClick(a) {
+      window.location.href = a.url
+    },
   },
   head: {
     title: 'Home',
