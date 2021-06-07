@@ -1,13 +1,22 @@
 <template>
-  <v-card>
-    <v-card-title class="headline text-center">
-      <v-row align="center" justify="space-around">About us</v-row>
-    </v-card-title>
-    <v-card-text class="text-center">
+  <div
+    class="
+      tw-rounded-md tw-border-2 tw-border-gray-200 tw-shadow-md tw-bg-gray-50
+    "
+  >
+    <div class="tw-text-center tw-flex tw-justify-around">
+      <div
+        class="
+          tw-text-center tw-font-medium tw-text-3xl tw-my-2 tw-text-align-bottom
+        "
+      >
+        About us
+      </div>
+    </div>
+    <div class="tw-text-center tw-mx-3 tw-px-2">
       <slot name="p1"></slot>
-      <hr class="my-3" />
-    </v-card-text>
-  </v-card>
+    </div>
+  </div>
 </template>
 
 <script>
