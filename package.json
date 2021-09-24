@@ -21,6 +21,7 @@
     "aos": "^2.3.4",
     "core-js": "^3.6.5",
     "nuxt": "^2.14.5",
+    "nuxt-gsap-module": "^1.4.0",
     "nuxt-purge-icons-module": "^0.7.0",
     "thpace": "^1.2.0",
     "vue-youtube": "^1.4.0"
