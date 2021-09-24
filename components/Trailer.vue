@@ -1,10 +1,34 @@
 <template>
-  <div id="wrapper" class="rounded-lg pa-2">
-    <div class="play-backdrop" @click="closeVideo"></div>
-    <div class="play-button">
-      <svg class="play-circles" viewBox="0 0 152 152">
+  <div
+    id="wrapper"
+    class="rounded-lg pa-2"
+    style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      height: 400px;
+      background-color: #333;
+      overflow: hidden;
+    "
+  >
+    <div
+      id="play-backdrop"
+      @click="closeVideo"
+      class="w-600 h-500 fixed opacity-0 bg-black"
+      style="visibility: hidden"
+    ></div>
+    <div
+      id="play-button"
+      style="width: 152px; height: 152px; position: relative; cursor: pointer"
+    >
+      <svg
+        id="play-circles"
+        viewBox="0 0 152 152"
+        style="display: block; width: 100%; height: 100%"
+      >
         <circle
-          class="play-circle-01"
+          id="play-circle-01"
           fill="none"
           stroke="#fff"
           stroke-width="3"
@@ -14,7 +38,7 @@
           r="72.7"
         />
         <circle
-          class="play-circle-02"
+          id="play-circle-02"
           fill="none"
           stroke="#fff"
           stroke-width="3"
@@ -24,15 +48,36 @@
           r="65.5"
         />
       </svg>
-      <div class="play-perspective">
-        <button class="play-close" @click="closeVideo"></button>
+      <div id="play-perspective">
+        <button
+          id="play-close"
+          @click="closeVideo"
+          style="
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            right: 15px;
+            bottom: calc(100% + 15px);
+            border: none;
+            outline: none;
+            background: none;
+            opacity: 0;
+            cursor: pointer;
+          "
+        ></button>
         <div
-          class="play-triangle"
+          id="play-triangle"
           @click="playVideo"
           @mouseover="rotateCircles"
           @mouseleave="rotateCirclesRev"
+          style="
+            width: 600px;
+            height: 400px;
+            background-color: #fff;
+            cursor: pointer;
+          "
         >
-          <div class="play-video">
+          <div id="play-video">
             <youtube
               ref="youtube"
               :video-id="videoId"
@@ -55,34 +100,34 @@ export default {
       openTL: null,
       rotateTL: null,
       videoId: 'b9pBQMns4lw',
-      playerVars: { autoplay: 1 },
+      playerVars: { autoplay: 0 },
     }
   },
   methods: {
     positionCircles() {
-      this.$gsap.set('.play-circle-01', {
+      this.$gsap.set('#play-circle-01', {
         rotation: 90,
         transformOrigin: 'center',
       })
 
-      this.$gsap.set('.play-circle-02', {
+      this.$gsap.set('#play-circle-02', {
         rotation: -90,
         transformOrigin: 'center',
       })
 
-      this.$gsap.set('.play-perspective', {
+      this.$gsap.set('#play-perspective', {
         xPercent: 6.5,
         scale: 0.175,
         transformOrigin: 'center',
         perspective: 1,
       })
 
-      this.$gsap.set('.play-video', {
+      this.$gsap.set('#play-video', {
         visibility: 'hidden',
         opacity: 0,
       })
 
-      this.$gsap.set('.play-triangle', {
+      this.$gsap.set('#play-triangle', {
         transformOrigin: 'left center',
         transformStyle: 'preserve-3d',
         rotationY: 10,
@@ -93,7 +138,7 @@ export default {
       this.rotateTL = this.$gsap
         .timeline({ paused: true })
         .to(
-          '.play-circle-01',
+          '#play-circle-01',
           {
             duration: 0.7,
             opacity: 0.1,
@@ -104,7 +149,7 @@ export default {
           0
         )
         .to(
-          '.play-circle-02',
+          '#play-circle-02',
           {
             duration: 0.7,
             opacity: 0.1,
@@ -119,7 +164,7 @@ export default {
       this.openTL = this.$gsap
         .timeline({ paused: true })
         .to(
-          '.play-backdrop',
+          '#play-backdrop',
           {
             duration: 0.8,
             opacity: 0,
@@ -139,7 +184,7 @@ export default {
           0
         )
         .to(
-          '.play-close',
+          '#play-close',
           {
             duration: 0.8,
             opacity: 1,
@@ -148,7 +193,7 @@ export default {
           0
         )
         .to(
-          '.play-perspective',
+          '#play-perspective',
           {
             duration: 0.8,
             xPercent: 0,
@@ -158,7 +203,7 @@ export default {
           0
         )
         .to(
-          '.play-triangle',
+          '#play-triangle',
           {
             duration: 0.8,
             scaleX: 1,
@@ -167,7 +212,7 @@ export default {
           0
         )
         .to(
-          '.play-triangle',
+          '#play-triangle',
           {
             duration: 1,
             rotationY: 0,
@@ -176,7 +221,7 @@ export default {
           0
         )
         .to(
-          '.play-video',
+          '#play-video',
           {
             duration: 1,
             visibility: 'visible',
@@ -206,50 +251,8 @@ export default {
 }
 </script>
 <style scoped>
-#wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* height: 100vh; */
-  height: 400px;
-  margin: 0;
-  background-color: #333;
-  overflow: hidden;
-}
-
-.play-button {
-  width: 152px;
-  height: 152px;
-  position: relative;
-  cursor: pointer;
-}
-
-.play-backdrop {
-  width: 600px;
-  height: 500px;
-  position: fixed;
-  /* left: 0;
-  top: 0; */
-  background-color: #000;
-  opacity: 0;
-  visibility: hidden;
-}
-
-.play-close {
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  right: 15px;
-  bottom: calc(100% + 15px);
-  border: none;
-  outline: none;
-  background: none;
-  opacity: 0;
-  cursor: pointer;
-}
-
-.play-close::before,
-.play-close::after {
+#play-close::before,
+#play-close::after {
   content: '';
   display: block;
   width: 100%;
@@ -261,28 +264,15 @@ export default {
   background-color: black;
 }
 
-.play-close::after {
+#play-close::after {
   transform: rotate(-45deg);
 }
 
-.play-circles {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.play-perspective {
+#play-perspective {
   width: 600px;
   height: 400px;
   position: absolute;
   left: -230px;
   top: -125px;
-}
-
-.play-triangle {
-  width: 600px;
-  height: 400px;
-  background-color: #fff;
-  cursor: pointer;
 }
 </style>
