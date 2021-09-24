@@ -109,9 +109,9 @@ export default {
     gsap: {
       extraPlugins: {
         scrollTo: true,
-        scrollTrigger: true
+        scrollTrigger: true,
       },
-    }
+    },
   },
   colorMode: {
     classSuffix: '',
