@@ -1,13 +1,4 @@
 <template>
-  <!-- <div class="rounded-lg pa-2" align="center" justify="center">
-    <youtube
-      ref="youtube"
-      :video-id="videoId"
-      :player-vars="playerVars"
-      max-width="650px"
-      width="100%"
-    />
-  </div> -->
   <div id="wrapper" class="rounded-lg pa-2">
     <div class="play-backdrop" @click="closeVideo"></div>
     <div class="play-button">
@@ -42,14 +33,6 @@
           @mouseleave="rotateCirclesRev"
         >
           <div class="play-video">
-            <!-- <iframe
-              width="600"
-              height="400"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-              frameborder="0"
-              allow="autoplay; encrypted-media"
-              allowfullscreen
-            ></iframe> -->
             <youtube
               ref="youtube"
               :video-id="videoId"
