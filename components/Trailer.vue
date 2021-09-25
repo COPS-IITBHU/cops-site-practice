@@ -1,31 +1,23 @@
 <template>
   <div
     id="wrapper"
-    class="rounded-lg pa-2"
-    style="
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0;
-      height: 400px;
-      background-color: #333;
-      overflow: hidden;
-    "
+    class="rounded-lg pa-2 tw-flex tw-justify-center tw-items-center tw-m-0"
+    style="height: 400px; background-color: #333; overflow: hidden"
   >
     <div
       id="play-backdrop"
+      class="w-600 h-500 fixed opacity-0 bg-black tw-invisible"
       @click="closeVideo"
-      class="w-600 h-500 fixed opacity-0 bg-black"
-      style="visibility: hidden"
     ></div>
     <div
       id="play-button"
-      style="width: 152px; height: 152px; position: relative; cursor: pointer"
+      class="tw-cursor-pointer"
+      style="width: 152px; height: 152px; position: relative"
     >
       <svg
         id="play-circles"
         viewBox="0 0 152 152"
-        style="display: block; width: 100%; height: 100%"
+        class="block tw-h-full tw-w-full"
       >
         <circle
           id="play-circle-01"
@@ -51,31 +43,27 @@
       <div id="play-perspective">
         <button
           id="play-close"
-          @click="closeVideo"
+          class="
+            cursor-pointer
+            tw-bg-none tw-border-0 tw-outline-none tw-opacity-0
+          "
           style="
             width: 30px;
             height: 30px;
             position: absolute;
             right: 15px;
             bottom: calc(100% + 15px);
-            border: none;
             outline: none;
-            background: none;
-            opacity: 0;
-            cursor: pointer;
           "
+          @click="closeVideo"
         ></button>
         <div
           id="play-triangle"
+          class="cursor-pointer tw-bg-white"
+          style="width: 600px; height: 400px"
           @click="playVideo"
           @mouseover="rotateCircles"
           @mouseleave="rotateCirclesRev"
-          style="
-            width: 600px;
-            height: 400px;
-            background-color: #fff;
-            cursor: pointer;
-          "
         >
           <div id="play-video">
             <youtube
@@ -103,30 +91,31 @@ export default {
       playerVars: { autoplay: 0 },
     }
   },
+  mounted() {
+    this.positionCircles()
+    this.configOpen()
+    this.configRotate()
+  },
   methods: {
     positionCircles() {
       this.$gsap.set('#play-circle-01', {
         rotation: 90,
         transformOrigin: 'center',
       })
-
       this.$gsap.set('#play-circle-02', {
         rotation: -90,
         transformOrigin: 'center',
       })
-
       this.$gsap.set('#play-perspective', {
         xPercent: 6.5,
         scale: 0.175,
         transformOrigin: 'center',
         perspective: 1,
       })
-
       this.$gsap.set('#play-video', {
         visibility: 'hidden',
         opacity: 0,
       })
-
       this.$gsap.set('#play-triangle', {
         transformOrigin: 'left center',
         transformStyle: 'preserve-3d',
@@ -185,11 +174,7 @@ export default {
         )
         .to(
           '#play-close',
-          {
-            duration: 0.8,
-            opacity: 1,
-            ease: 'power2.inOut',
-          },
+          { duration: 0.8, opacity: 1, ease: 'power2.inOut' },
           0
         )
         .to(
@@ -222,11 +207,7 @@ export default {
         )
         .to(
           '#play-video',
-          {
-            duration: 1,
-            visibility: 'visible',
-            opacity: 1,
-          },
+          { duration: 1, visibility: 'visible', opacity: 1 },
           0.5
         )
     },
@@ -243,11 +224,6 @@ export default {
       this.rotateTL.reverse()
     },
   },
-  mounted() {
-    this.positionCircles()
-    this.configOpen()
-    this.configRotate()
-  },
 }
 </script>
 <style scoped>
@@ -263,11 +239,9 @@ export default {
   transform: rotate(45deg);
   background-color: black;
 }
-
 #play-close::after {
   transform: rotate(-45deg);
 }
-
 #play-perspective {
   width: 600px;
   height: 400px;
