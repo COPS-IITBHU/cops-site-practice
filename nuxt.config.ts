@@ -51,6 +51,7 @@ export default {
     // Doc: https://github.com/nuxt-community/tailwindcss-module
     '@nuxtjs/tailwindcss',
     'nuxt-purge-icons-module',
+    'nuxt-gsap-module',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -103,6 +104,12 @@ export default {
         tailwindcss: join(__dirname, 'tailwind.config.js'),
         'postcss-nested': true,
         autoprefixer: true,
+      },
+    },
+    gsap: {
+      extraPlugins: {
+        scrollTo: true,
+        scrollTrigger: true,
       },
     },
   },
