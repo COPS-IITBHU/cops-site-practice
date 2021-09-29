@@ -36,13 +36,33 @@
       <h2
         v-show="isOpen"
         id="navTitle"
-        class="tw-top-4 tw-left-4 tw-opacity-0 tw-fixed tw-z-10 tw-text-white"
+        class="
+          tw-top-4
+          tw-left-4
+          tw-opacity-0
+          tw-fixed
+          tw-z-10
+          tw-text-white
+          tw-font-extrabold
+          tw-text-5xl
+          tw-tracking-widest
+        "
+        style="font-family: 'Roboto', 'Montserrat', sans-serif"
       >
         COPS - IIT(BHU)
       </h2>
       <ul
         v-show="isOpen"
-        class="routeList tw-fixed tw-z-10 tw-flex tw-flex-col"
+        class="
+          routeList
+          tw-fixed
+          tw-z-10
+          tw-flex
+          tw-flex-col
+          tw-list-none
+          tw-top-1/2
+          tw-left-1/2
+        "
       >
         <nuxt-link to="/">
           <li class="list_item" @click="closeNavbar" @keydown="closeNavbar">
@@ -164,16 +184,7 @@ export default {
   stroke-dashoffset: 0px;
 }
 /* NAVBAR STYLING */
-#navTitle {
-  font-size: 40px;
-  letter-spacing: 12px;
-  font-family: 'Roboto', 'Montserrat', sans-serif;
-  font-weight: 800;
-}
 .routeList {
-  list-style: none;
-  top: 50%;
-  left: 50%;
   transform: translate(-50%, -50%);
   width: 250px;
 }
