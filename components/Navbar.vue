@@ -6,7 +6,6 @@
         navbar-toggle
         tw-cursor-pointer tw-fixed tw-z-20 tw-top-4 tw-right-4 tw-p-0
       "
-      style="background: transparent; border: none; outline: none"
       type="button"
       :class="{ active: isActive }"
       @click="openNavbar"
@@ -23,16 +22,8 @@
         />
       </svg>
     </button>
-    <div
-      class="navbar tw-top-0 tw-left-0 tw-w-screen tw-z-10 tw-fixed"
-      style="display: flex"
-    >
-      <div
-        v-for="div in 4"
-        :key="div"
-        class="navBg tw-h-0"
-        style="width: 25%; background-color: #7209b7"
-      ></div>
+    <div class="navbar tw-top-0 tw-left-0 tw-w-screen tw-z-10 tw-fixed tw-flex">
+      <div v-for="div in 4" :key="div" class="navBg tw-h-0"></div>
       <h2
         v-show="isOpen"
         id="navTitle"
@@ -149,6 +140,9 @@ export default {
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  background: transparent;
+  border: none;
+  outline: none;
 }
 .navbar-toggle .line {
   fill: none;
@@ -184,6 +178,10 @@ export default {
   stroke-dashoffset: 0px;
 }
 /* NAVBAR STYLING */
+.navBg {
+  width: 25%;
+  background-color: #7209b7;
+}
 .routeList {
   transform: translate(-50%, -50%);
   width: 250px;
